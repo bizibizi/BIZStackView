@@ -7,12 +7,19 @@ Wait for gif presentation, it's loading...
 
 BIZStackView is a subclass of UIScrollView that presents scrolling stack of cards.
 
+# Installation
+
+ - Copy BIZStackView folder to your project 
+ - ```#import "BIZStackView.h"``` 
+
 # Usage
 
- - Create ```BIZStackView``` like UIScrollView with code or with Storyboard (set class )
- - implement ```BIZStackViewDataSource```
+ - Create UIScrollView(with code or with Storyboard) and place wherever you desire. Set it's class to```BIZStackView```.
+ - Implement ```BIZStackViewDataSource``` and setup ```BIZStackView```
 ```objective-c
 @interface ViewController () <BIZStackViewDataSource>
+@property (weak, nonatomic) IBOutlet BIZStackView *stackView;
+
 ...
 - (void)viewDidLoad
 {
@@ -36,8 +43,6 @@ self.stackView.dataSource = self;
 }
  
 ```
+- Implement ```BIZStackViewDelegate```if you need to handle ```BIZStackView``` action 
 
-# Installation
-
- - Copy BIZStackView folder to your project 
- - ```#import "BIZStackView.h"``` 
+ 
