@@ -32,7 +32,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="stackedMenu" destination="ngW-59-bvz" id="a2a-bs-MIR"/>
+                        <outlet property="stackView" destination="ngW-59-bvz" id="GYJ-ZE-w6v"/>
                         <segue destination="fmZ-9d-inH" kind="show" identifier="show details" animates="NO" id="nQJ-7a-sJc"/>
                     </connections>
                 </viewController>

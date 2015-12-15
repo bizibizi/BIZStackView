@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>BIZSlackView.xcscheme</key>
+		<key>Example.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7EE814471C18978600D5B4E1</key>
+		<key>7E4B55D51C20632B00522BA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

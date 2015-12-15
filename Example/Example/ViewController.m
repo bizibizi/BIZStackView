@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  BIZSlackView
+//  Example
 //
-//  Created by IgorBizi@mail.ru on 12/9/15.
+//  Created by IgorBizi@mail.ru on 12/15/15.
 //  Copyright © 2015 IgorBizi@mail.ru. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 
 @interface ViewController () <BIZStackViewDataSource, BIZStackViewDelegate>
-@property (weak, nonatomic) IBOutlet BIZStackView *stackedMenu;
+@property (weak, nonatomic) IBOutlet BIZStackView *stackView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @end
 
@@ -29,24 +29,24 @@
     {
         [self.dataSource addObject:[UIImage imageNamed:[NSString stringWithFormat:@"%ld.jpg", (long)i]]];
     }
-
-    self.stackedMenu.stackedMenuDelegate = self;
-    self.stackedMenu.dataSource = self;
+    
+    self.stackView.stackViewDelegate = self;
+    self.stackView.dataSource = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [self.stackedMenu restoreStateAnimated:YES completion:nil];
+    [self.stackView restoreStateAnimated:YES completion:nil];
 }
 
-- (NSInteger)numberOfItemsInStackedMenu:(BIZStackView *)stackedMenu
+- (NSInteger)numberOfItemsInStackView:(BIZStackView *)stackView
 {
     return self.dataSource.count;
 }
 
-- (UIView *)stackedMenu:(BIZStackView *)stackedMenu itemForRowAtIndex:(NSInteger)index
+- (UIView *)stackView:(BIZStackView *)stackView itemForRowAtIndex:(NSInteger)index
 {
     CGFloat w = self.view.bounds.size.width - 60;
     CGFloat h = 400;
@@ -58,15 +58,15 @@
     return view;
 }
 
-- (CGFloat)heightForRowAtIndex:(NSInteger)index
+- (CGFloat)stackView:(BIZStackView *)stackView heightForRowAtIndex:(NSInteger)index
 {
     return 120;
 }
 
-- (BOOL)stackedMenu:(BIZStackView *)stackedMenu didSelectRowAtIndex:(NSInteger)index
+- (BOOL)stackView:(BIZStackView *)stackView didSelectItemAtIndex:(NSInteger)index
 {
-    [stackedMenu showFullScreenItemAtIndex:index completion:^(BOOL finished) {
-        UIImage *image = ((UIImageView *)[self stackedMenu:stackedMenu itemForRowAtIndex:index]).image;
+    [stackView showFullScreenItemAtIndex:index completion:^(BOOL finished) {
+        UIImage *image = ((UIImageView *)[self stackView:stackView itemForRowAtIndex:index]).image;
         [self performSegueWithIdentifier:@"show details"
                                   sender:image];
     }];

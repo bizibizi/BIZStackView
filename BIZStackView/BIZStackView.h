@@ -12,21 +12,21 @@
 
 @protocol BIZStackViewDataSource <NSObject>
 @required
-- (NSInteger)numberOfItemsInStackedMenu:(BIZStackView *)stackedMenu;
-- (UIView *)stackedMenu:(BIZStackView *)stackedMenu itemForRowAtIndex:(NSInteger)index;
-- (CGFloat)heightForRowAtIndex:(NSInteger)index;
+- (NSInteger)numberOfItemsInStackView:(BIZStackView *)stackView;
+- (UIView *)stackView:(BIZStackView *)stackView itemForRowAtIndex:(NSInteger)index;
+- (CGFloat)stackView:(BIZStackView *)stackView heightForRowAtIndex:(NSInteger)index;
 @end
 
 
 @protocol BIZStackViewDelegate <NSObject>
 @optional
-- (BOOL)stackedMenu:(BIZStackView *)stackedMenu didSelectRowAtIndex:(NSInteger)index;
+- (BOOL)stackView:(BIZStackView *)stackView didSelectItemAtIndex:(NSInteger)index;
 @end
 
 
 @interface BIZStackView : UIScrollView
 @property(nonatomic) id <BIZStackViewDataSource> dataSource;
-@property(nonatomic) id <BIZStackViewDelegate> stackedMenuDelegate;
+@property(nonatomic) id <BIZStackViewDelegate> stackViewDelegate;
 
 - (void)reloadData;
 - (void)restoreStateAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion;

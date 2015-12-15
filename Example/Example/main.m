@@ -1,8 +1,8 @@
 //
 //  main.m
-//  BIZSlackView
+//  Example
 //
-//  Created by IgorBizi@mail.ru on 12/9/15.
+//  Created by IgorBizi@mail.ru on 12/15/15.
 //  Copyright © 2015 IgorBizi@mail.ru. All rights reserved.
 //
 

@@ -8,17 +8,7 @@
 
 
 #import "BIZStackView.h"
-
-
-@interface BIZStackViewItemData : NSObject
-@property(nonatomic) UIView*view;
-@property(nonatomic) NSInteger index;
-@property(nonatomic) CGRect frame;
-@end
-
-
-@implementation BIZStackViewItemData
-@end
+#import "BIZStackViewItemData.h"
 
 
 @interface BIZStackView ()
@@ -28,6 +18,9 @@
 
 
 @implementation BIZStackView
+
+
+#pragma mark - LifeCycle
 
 
 - (void)awakeFromNib
@@ -44,11 +37,19 @@
     self.items = [NSMutableArray array];
 }
 
+
+#pragma mark - Getters/Setters
+
+
 - (void)setDataSource:(id<BIZStackViewDataSource>)dataSource
 {
     _dataSource = dataSource;
     [self reloadData];
 }
+
+
+#pragma mark - Methods
+
 
 - (void)handleTap:(UILongPressGestureRecognizer *)recognizer
 {
@@ -80,16 +81,12 @@
     }
     
     NSInteger selectedIndex = [self indexByView:touchesMoveView];
-    if ([self.stackedMenuDelegate stackedMenu:self didSelectRowAtIndex:selectedIndex]) {
+    if ([self.stackViewDelegate stackView:self didSelectItemAtIndex:selectedIndex]) {
         [UIView animateWithDuration:0.5
                          animations:^{
                              touchesMoveView.frame = initalViewRect;
                          }];
     }
-}
-
-- (void)docoverItemState
-{
 }
 
 - (void)reloadData
@@ -105,9 +102,9 @@
                 }
             }
             CGFloat itemPosition = 44;
-            for(int i = 0; i < [self.dataSource numberOfItemsInStackedMenu:self]; i++)
+            for(int i = 0; i < [self.dataSource numberOfItemsInStackView:self]; i++)
             {
-                UIView *item = [self.dataSource stackedMenu:self itemForRowAtIndex:i];
+                UIView *item = [self.dataSource stackView:self itemForRowAtIndex:i];
                 if (item) {
                     BIZStackViewItemData *itemData = [[BIZStackViewItemData alloc] init];
                     
@@ -117,7 +114,7 @@
                     [self addSubview:item];
                     
                     item.frame = rect;
-                    itemPosition += [self.dataSource heightForRowAtIndex:i];
+                    itemPosition += [self.dataSource stackView:self heightForRowAtIndex:i];
                     
                     itemData.view = item;
                     itemData.frame = item.frame;
