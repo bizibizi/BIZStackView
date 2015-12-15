@@ -5,7 +5,7 @@ Wait for gif presentation, it's loading...
 ![alt tag](https://github.com/bizibizi/BIZSlackView/blob/master/presentation.gif)
 
 
-BIZStackView is a subclass of UIScrollView that adds presents scrolling stack of cards.
+BIZStackView is a subclass of UIScrollView that presents scrolling stack of cards.
 
 # Usage
 
