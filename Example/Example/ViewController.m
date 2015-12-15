@@ -41,6 +41,10 @@
     [self.stackView restoreStateAnimated:YES completion:nil];
 }
 
+
+#pragma mark - BIZStackViewDataSource
+
+
 - (NSInteger)numberOfItemsInStackView:(BIZStackView *)stackView
 {
     return self.dataSource.count;
@@ -63,6 +67,10 @@
     return 120;
 }
 
+
+#pragma mark - BIZStackViewDelegate
+
+
 - (BOOL)stackView:(BIZStackView *)stackView didSelectItemAtIndex:(NSInteger)index
 {
     [stackView showFullScreenItemAtIndex:index completion:^(BOOL finished) {
@@ -72,6 +80,10 @@
     }];
     return NO;
 }
+
+
+#pragma mark - UIViewController
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

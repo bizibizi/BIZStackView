@@ -51,7 +51,7 @@
 #pragma mark - Methods
 
 
-- (void)handleTap:(UILongPressGestureRecognizer *)recognizer
+- (void)handleTap:(UITapGestureRecognizer *)recognizer
 {
     static CGPoint initalTouchPosition;
     static CGRect initalViewRect;
