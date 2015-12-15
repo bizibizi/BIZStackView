@@ -14,7 +14,8 @@ BIZStackView is a subclass of UIScrollView that presents scrolling stack of card
 
 # Usage
 
- - Create UIScrollView(with code or with Storyboard) and place wherever you desire. Set it's class to```BIZStackView```.
+ - Create UIScrollView via code or Storyboard and place wherever you desire. 
+ - Set UIScrollView's class to```BIZStackView```.
  - Implement ```BIZStackViewDataSource``` and setup ```BIZStackView```
 ```objective-c
 @interface ViewController () <BIZStackViewDataSource>
