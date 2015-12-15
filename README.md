@@ -1,6 +1,6 @@
 # BIZStackView
 
-Wait for gif presentation, it's loading...
+*Wait for gif presentation, it's loading...*
 
 ![alt tag](https://github.com/bizibizi/BIZSlackView/blob/master/presentation.gif)
 
