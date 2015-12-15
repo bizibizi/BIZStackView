@@ -19,12 +19,12 @@ BIZStackView is a subclass of UIScrollView that presents scrolling stack of card
 ```objective-c
 @interface ViewController () <BIZStackViewDataSource>
 @property (weak, nonatomic) IBOutlet BIZStackView *stackView;
-
 ...
+
 - (void)viewDidLoad
 {
 ...
-self.stackView.dataSource = self;
+   self.stackView.dataSource = self;
 }
 
 - (NSInteger)numberOfItemsInStackView:(BIZStackView *)stackView
@@ -43,6 +43,6 @@ self.stackView.dataSource = self;
 }
  
 ```
-- Implement ```BIZStackViewDelegate```if you need to handle ```BIZStackView``` action 
+- Implement ```BIZStackViewDelegate```if you need to handle ```BIZStackView``` actions
 
  
