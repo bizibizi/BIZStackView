@@ -58,7 +58,7 @@ BIZStackView is a subclass of UIScrollView that presents scrolling stack of card
 ```
 
  
- # License
+# License
  
  The MIT License (MIT)
 
