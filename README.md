@@ -10,6 +10,7 @@ BIZStackView is a subclass of UIScrollView that presents scrolling stack of card
 
 # Installation
 
+### Manually
  - Copy BIZStackView folder to your project 
  - ```#import "BIZStackView.h"``` 
 
@@ -58,6 +59,12 @@ BIZStackView is a subclass of UIScrollView that presents scrolling stack of card
 ```
 
  
+# Contact
+Igor Bizi
+- https://www.linkedin.com/in/igorbizi
+- igorbizi@mail.ru
+
+
 # License
  
  The MIT License (MIT)
